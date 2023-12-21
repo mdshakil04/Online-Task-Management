@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
-// import loginimg from '../../assets/image/banner/login.jpg'
+import loginimg from '../../assets/images/login.jpg'
 const Registration = () => {
   const [registerError, setRegisterError] = useState('');
   const [success, setSuccess] = useState('');
@@ -100,7 +100,7 @@ const Registration = () => {
         }
       </div>
       <div className=" mt-24">
-          {/* <img className=" w-3/4" src={loginimg} alt="" /> */}
+          <img className=" w-3/4" src={loginimg} alt="" />
         </div>
     </div>
   );

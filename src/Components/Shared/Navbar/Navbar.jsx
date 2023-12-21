@@ -17,10 +17,13 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About Us</NavLink>
       </li>
+      <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </li>
     </>
   );
   return (
-    <div className="navbar  container mx-auto bg-emerald-200 font-bold ">
+    <div className="navbar  bg-slate-500 text-white font-bold ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -64,7 +67,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link to="/login">
-              <button className="btn">Login</button>
+              <button className="btn btn-accent text-xl">Login</button>
             </Link>
           )}
         </div>

@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
     <div
-      className="hero lg:h-[800px]"
+      className="hero lg:h-[835px]"
       style={{
         backgroundImage:
           "url(https://i.ibb.co/VBypMM2/task-management.jpg)",
@@ -12,14 +13,16 @@ const Banner = () => {
     >
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
+        <div className="">
           <h1 className="mb-5 text-5xl lg:text-7xl font-bold">Organize your task online</h1>
           <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Sometimes we get so busy with our daily lives <br/> we do not take the steps and time necessary to be introspective.<br/>
+            Organize your daily task here. It is totally free of cost. 
           </p>
-          <button className="btn btn-success btn-outline font-bold text-2xl">Get Started</button>
+          <Link to="/dashboard">
+                <button className="btn btn-accent font-bold text-2xl">Let's Explore</button>
+          </Link>
+          
         </div>
       </div>
     </div>

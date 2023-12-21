@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Firebase/AuthProvider";
-// import loginimg from '../../assets/image/banner/login.jpg'
+import loginimg from '../../assets/images/login.jpg'
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -35,7 +35,7 @@ const Login = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left w-1/2">
-         {/* <img src={loginimg} alt="login" /> */}
+         <img src={loginimg} alt="login" />
           
         </div>
         <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">

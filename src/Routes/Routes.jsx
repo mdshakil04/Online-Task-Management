@@ -6,6 +6,8 @@ import Root from "./Root";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import PrivateRoute from './PrivateRoute';
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -23,6 +25,10 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
         {
             path:'/register',
             element:<Registration></Registration>
+        },
+        {
+          path:'/dashboard',
+          element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
         }
       ]
     },
