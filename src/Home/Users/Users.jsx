@@ -6,7 +6,7 @@ import student from "../../assets/images/users/student.jpg";
 
 const Users = () => {
   return (
-    <div className=" container my-4  mx-auto p-4">
+    <div className=" container mb-4  mx-auto p-4">
       <h2 className="text-5xl text-center">
         {" "}
         Benefited by Professionals
@@ -20,7 +20,7 @@ const Users = () => {
             />
           </figure>
           <div className=" text-center border-4 -mt-8 bg-white rounded-xl pb-4">
-            <h2 className="text-4xl ">Web Developers</h2>
+            <h2 className="text-4xl ">Programmers</h2>
           </div>
         </div>
         <div className="card card-compact  bg-base-100 shadow-xl">

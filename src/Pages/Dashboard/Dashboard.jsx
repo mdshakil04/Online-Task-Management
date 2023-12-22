@@ -5,84 +5,108 @@ import { AuthContext } from "./../../Firebase/AuthProvider";
 const Dashboard = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
+  const handleAddTask = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const title = form.title.value;
+    const experience = form.experience.value;
+    const category = form.category.value;
+    const description = form.image.value;
+    const newTeacher = { name, title, experience, category, description };
+    console.log(newTeacher);
+  };
   return (
-    <div className=" ">
-      <h2 className=" text-center text-7xl my-4">Add new Task</h2>
-      <div>
-        <div className="collapse ">
-          <input type="checkbox" />
-          <div className="collapse-title text-xl font-medium">
-            {user && <p className=" text-2xl font-bold btn btn-outline btn-accent">{user.displayName}</p>}
-          </div>
-          <div className="collapse-content">
-            <div className=" flex gap-4 mt-8">
-              <button className=" btn   lg:text-2xl">
-                New Task
-              </button>
-              <button className=" btn  lg:text-2xl">
-                See Previous Task
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className="hero ">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="text-center lg:text-left w-1/2">
-              <img src="https://i.ibb.co/VBypMM2/task-management.jpg" alt="" />
-            </div>
-            <div className="card shrink-0 w-1/2 ">
-              <form className="card-body">
+    <div className=" container mx-auto">
+      <h2 className="text-4xl text-center mt-4">Add New Task</h2>
+      <div className=" flex flex-row-reverse">
+        <div className=" w-1/2">
+          <div className=" container bg-[#83cbf5ea] mx-auto p-8 my-8">
+            <form onSubmit={handleAddTask} className="">
+              <div className=" grid md:grid-cols-2  gap-4">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text font-bold">Title</span>
+                    <span className="label-text text-xl ">Title</span>
                   </label>
                   <input
+                    name="title"
                     type="text"
-                    placeholder="Title"
+                    placeholder="Enter Title here"
                     className="input input-bordered"
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control ">
                   <label className="label">
-                    <span className="label-text font-bold">Descriptions</span>
+                    <span className="label-text text-xl ">Description</span>
                   </label>
                   <input
+                    name="description"
                     type="text"
                     placeholder="Description"
                     className="input input-bordered"
                     required
                   />
                 </div>
-                <label className="label">
-                  <span className="label-text font-bold">Set Priority</span>
-                </label>
-                <select className="select select-bordered w-full ">
-                  <option disabled selected>
-                    Priority
-                  </option>
-                  <option>Low</option>
-                  <option>Moderate</option>
-                  <option>High</option>
-                </select>
-                <h2 className=" font-bold text-red-600">Deadlines</h2>
-                <div className=" border-2 rounded-lg py-2 px-2">
+                <div>
+                  <label className="label">
+                    <span className="label-text text-xl ">
+                      Deadlines
+                    </span>
+                  </label>
+                  <div className=" border-2 rounded-lg py-2 px-2">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
                   />
                 </div>
-                <div className="form-control mt-6">
-                  <button className="btn btn-accent text-white text-2xl">
-                    Add task
-                  </button>
                 </div>
-              </form>
-            </div>
+                <div>
+                  <label className="label">
+                    <span className="label-text text-xl ">Priority</span>
+                  </label>
+                  <select
+                    className="select select-info w-full "
+                    name="category"
+                    type="text"
+                  >
+                    <option type="text" value disabled defaultValue>
+                      Select Task Priority
+                    </option>
+                    <option type="text" value="Web Development">
+                      Low
+                    </option>
+                    <option type="text" value="Digital Marketing">
+                      Moderate
+                    </option>
+                    <option type="text" value="Digital Marketing">
+                      High
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <input
+                  className=" text-xl font-bold btn border-2 border-slate-700 btn-info mt-4 w-full"
+                  type="submit"
+                  value="Add Task"
+                />
+              </div>
+            </form>
           </div>
         </div>
+        <div className=" w-1/2">
+        <details className="collapse">
+          <summary className="collapse-title text-xl font-medium">
+          {user && <p className=" btn btn-accent ">{user.displayName}</p>}
+          </summary>
+          <div className="collapse-content flex flex-col">
+            <button className=" btn btn-accent btn-outline">New Task</button>
+            <button className=" mt-4 btn btn-accent btn-outline">Previous Task</button>
+            <button className=" mt-4 btn btn-accent btn-outline">Ongoing Task</button>
+            <button className=" mt-4 btn btn-accent btn-outline">Completed Task</button>
+          </div>
+        </details>
+      </div>
       </div>
     </div>
   );
