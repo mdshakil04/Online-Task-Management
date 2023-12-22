@@ -8,6 +8,7 @@ import Registration from "../Pages/Registration/Registration";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from './PrivateRoute';
+import About from "../Components/About/About";
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -29,6 +30,10 @@ import PrivateRoute from './PrivateRoute';
         {
           path:'/dashboard',
           element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+        },
+        {
+          path:'/about',
+          element:<About></About>
         }
       ]
     },
